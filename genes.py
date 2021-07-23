@@ -1,8 +1,7 @@
 import numpy as np
 import random
-
+iii = ['118100','118300','117100','116900','116100','116300','116100','115900']
 class Genes:
-	#initialize variables 
 	def __init__ (self, GRAPH, ITERATION, NODES, CHILDS, MUT, start, stop, firstParent, secondParent):
 		self.iteration = ITERATION
 		self.numberOfNodes = NODES
@@ -100,7 +99,6 @@ class Genes:
 						self.newChilds[nChild][k] = self.offSpring[k]
 					nChild += 1
 
-			#self.printChilds(nChild)
 
 			for j in range(nChild):
 				if(self.newChilds[j][0]==self.startCity):
@@ -160,12 +158,12 @@ class Genes:
 		#Method to print info about parents
 		print('First parent: ', end="", flush=True)
 		for i in range(len(self.parent1)):
-			if self.parent1[i]!=-1: print(self.parent1[i], end=" ", flush=True)
+			if self.parent1[i]!=-1: print(iii[self.parent1[i]], end=" ", flush=True)
 		print('		Cost: ' + str(self.costOfParent1))
 
 		print('Second parent: ', end="", flush=True)
 		for i in range(len(self.parent2)):
-			if self.parent2[i]!=-1: print(self.parent2[i], end=" ", flush=True)
+			if self.parent2[i]!=-1: print(iii[self.parent2[i]], end=" ", flush=True)
 		print('		Cost: ' + str(self.costOfParent2))
 
 
@@ -173,7 +171,7 @@ class Genes:
 		print('Currently best route: ', end="", flush=True) 
 
 		for i in range(len(self.bestRoute)):
-			if self.bestRoute[i]!=-1: print(self.bestRoute[i], end=" ", flush=True)
+			if self.bestRoute[i]!=-1: print(iii[self.bestRoute[i]], end=" ", flush=True)
 		print('	Cost: ' + str(self.costOfBestRoute))
 
 
